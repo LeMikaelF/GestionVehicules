@@ -6,7 +6,6 @@ Gui::Gui(QWidget *parent)
 	ui.setupUi(this);
 }
 
-
 Gui::~Gui()
 {
 
