@@ -18,3 +18,4 @@ FORMS += DialogueSupprimer.ui \
 RESOURCES += 
 LIBS += "../source/Debug/libsource.a"
 INCLUDEPATH += "../source/."
+	

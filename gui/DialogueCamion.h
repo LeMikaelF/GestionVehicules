@@ -11,9 +11,14 @@ class DialogueCamion : public QDialog
 public:
     DialogueCamion(QWidget *parent = 0);
     ~DialogueCamion();
-
 private:
     Ui::DialogueCamionClass ui;
+    const std::string reqNiv() const;
+    const std::string reqImmatriculation() const;
+    int reqPoids() const;
+    int reqNbEssieux() const;
+private slots:
+	void validerCamion();
 };
 
 #endif // DIALOGUECAMION_H
