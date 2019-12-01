@@ -1,19 +1,94 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>DialogueCamionClass</class>
- <widget class="QDialog" name="DialogueCamionClass" >
-  <property name="geometry" >
+ <widget class="QDialog" name="DialogueCamionClass">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>239</width>
+    <height>184</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string>DialogueCamion</string>
+  <property name="windowTitle">
+   <string>Ajout d'un camion</string>
   </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="numRoDeSRieLabel">
+         <property name="text">
+          <string>Numéro de série</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditNiv"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelImmatriculation">
+         <property name="text">
+          <string>Immatriculation</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEditImmatriculation"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelPoids">
+         <property name="text">
+          <string>Poids (kg)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEditPoids"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelNbEssieux">
+         <property name="text">
+          <string>Nombre d'essieux</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEditNbEssieux"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="buttonAjouter">
+         <property name="text">
+          <string>Ajouter</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonAnnuler">
+         <property name="text">
+          <string>Annuler</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>
