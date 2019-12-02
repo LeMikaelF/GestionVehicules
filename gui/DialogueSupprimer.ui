@@ -1,19 +1,94 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>DialogueSupprimerClass</class>
- <widget class="QDialog" name="DialogueSupprimerClass" >
-  <property name="geometry" >
+ <widget class="QDialog" name="DialogueSupprimerClass">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>228</width>
+    <height>85</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string>DialogueSupprimer</string>
+  <property name="windowTitle">
+   <string>Supprimer un véhicule</string>
   </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelNiv">
+         <property name="text">
+          <string>Niv à supprimer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditNiv"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="buttonSupprimer">
+         <property name="text">
+          <string>Supprimer</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonAnnuler">
+         <property name="text">
+          <string>Annuler</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonSupprimer</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogueSupprimerClass</receiver>
+   <slot>validerNiv()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonAnnuler</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogueSupprimerClass</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>validerNiv()</slot>
+ </slots>
 </ui>
