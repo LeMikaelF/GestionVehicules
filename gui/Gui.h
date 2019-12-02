@@ -21,9 +21,9 @@ private:
     saaq::Proprietaire proprietaire;
 
 private slots:
-	void ajouterCamion(const saaq::Camion& camion);
-	void ajouterVehiculePromenade(const saaq::VehiculePromenade& vehiculePromenade);
-	void supprimerVehicule(const saaq::Vehicule& vehicule);
+	void ajouterCamion();
+	void ajouterVehiculePromenade();
+	void supprimerVehicule();
 };
 
 #endif // GUI_H

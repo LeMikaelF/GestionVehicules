@@ -20,10 +20,9 @@ const string DialogueSupprimer::reqNiv() const {
 }
 
 void DialogueSupprimer::validerNiv() {
-	if(util::validerNiv(ui.lineEditNiv->text().toStdString())) {
+	if(!util::validerNiv(ui.lineEditNiv->text().toStdString())) {
 		QString msg("Le niv est invalide.");
-		QMessageBox(this, "Erreur", msg);
-		reject();
+		QMessageBox::information(this, "Erreur", msg);
 	} else {
 		accept();
 	}
