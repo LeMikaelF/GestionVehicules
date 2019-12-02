@@ -7,7 +7,7 @@
 using namespace std;
 
 DialogueCamion::DialogueCamion(QWidget *parent)
-    : QDialog(parent)
+: QDialog(parent)
 {
 	ui.setupUi(this);
 }
@@ -26,19 +26,36 @@ const string DialogueCamion::reqImmatriculation() const {
 }
 
 int DialogueCamion::reqPoids() const {
-	return stoi(ui.lineEditPoids->text().toStdString());
+	try {
+		return stoi(ui.lineEditPoids->text().toStdString());
+	} catch (invalid_argument&) {
+		return 0;
+	}
 }
 
 int DialogueCamion::reqNbEssieux() const {
-	return stoi(ui.lineEditNbEssieux->text().toStdString());
+	try {
+		return stoi(ui.lineEditNbEssieux->text().toStdString());
+	} catch (invalid_argument&) {
+		return 0;
+	}
 }
 
 void DialogueCamion::validerCamion() {
 	//TODO stub
+
 	string niv = ui.lineEditNiv->text().toStdString();
 	string immatriculation = ui.lineEditImmatriculation->text().toStdString();
-	int poids = stoi(ui.lineEditPoids->text().toStdString());
-	int nbEssieux = stoi(ui.lineEditNbEssieux->text().toStdString());
+
+	int poids = 0;
+	try {
+		poids = stoi(ui.lineEditPoids->text().toStdString());
+	} catch (invalid_argument&) {}
+
+	int nbEssieux = 0;
+	try {
+		nbEssieux = stoi(ui.lineEditNbEssieux->text().toStdString());
+	} catch (invalid_argument&) {}
 
 	bool valide = true;
 
@@ -62,7 +79,5 @@ void DialogueCamion::validerCamion() {
 
 	if(valide) {
 		accept();
-	} else {
-		reject();
 	}
 }

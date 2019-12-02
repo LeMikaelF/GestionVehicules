@@ -85,6 +85,8 @@ public:
 
 
         retranslateUi(DialogueSupprimerClass);
+        QObject::connect(buttonSupprimer, SIGNAL(clicked()), DialogueSupprimerClass, SLOT(validerNiv()));
+        QObject::connect(buttonAnnuler, SIGNAL(clicked()), DialogueSupprimerClass, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(DialogueSupprimerClass);
     } // setupUi

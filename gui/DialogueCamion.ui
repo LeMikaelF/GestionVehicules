@@ -90,5 +90,41 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonAjouter</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogueCamionClass</receiver>
+   <slot>validerCamion()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonAnnuler</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogueCamionClass</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>validerCamion()</slot>
+ </slots>
 </ui>

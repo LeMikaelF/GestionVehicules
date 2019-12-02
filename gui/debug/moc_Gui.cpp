@@ -30,18 +30,16 @@ static const uint qt_meta_data_Gui[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      12,    5,    4,    4, 0x08,
-      58,   40,    4,    4, 0x08,
-     117,  108,    4,    4, 0x08,
+       5,    4,    4,    4, 0x08,
+      21,    4,    4,    4, 0x08,
+      48,    4,    4,    4, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Gui[] = {
-    "Gui\0\0camion\0ajouterCamion(saaq::Camion)\0"
-    "vehiculePromenade\0"
-    "ajouterVehiculePromenade(saaq::VehiculePromenade)\0"
-    "vehicule\0supprimerVehicule(saaq::Vehicule)\0"
+    "Gui\0\0ajouterCamion()\0ajouterVehiculePromenade()\0"
+    "supprimerVehicule()\0"
 };
 
 void Gui::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -50,12 +48,13 @@ void Gui::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         Q_ASSERT(staticMetaObject.cast(_o));
         Gui *_t = static_cast<Gui *>(_o);
         switch (_id) {
-        case 0: _t->ajouterCamion((*reinterpret_cast< const saaq::Camion(*)>(_a[1]))); break;
-        case 1: _t->ajouterVehiculePromenade((*reinterpret_cast< const saaq::VehiculePromenade(*)>(_a[1]))); break;
-        case 2: _t->supprimerVehicule((*reinterpret_cast< const saaq::Vehicule(*)>(_a[1]))); break;
+        case 0: _t->ajouterCamion(); break;
+        case 1: _t->ajouterVehiculePromenade(); break;
+        case 2: _t->supprimerVehicule(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObjectExtraData Gui::staticMetaObjectExtraData = {

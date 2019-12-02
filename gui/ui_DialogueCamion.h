@@ -123,6 +123,8 @@ public:
 
 
         retranslateUi(DialogueCamionClass);
+        QObject::connect(buttonAjouter, SIGNAL(clicked()), DialogueCamionClass, SLOT(validerCamion()));
+        QObject::connect(buttonAnnuler, SIGNAL(clicked()), DialogueCamionClass, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(DialogueCamionClass);
     } // setupUi
