@@ -201,7 +201,8 @@ namespace util
  */
     bool estConforme(const string &p_format, const string &p_chaine, const unsigned int positionStricte)
     {
-        return positionStricte >= 0 && positionStricte <= p_format.length()
+        return p_format.length() == p_chaine.length()
+        	   && positionStricte >= 0 && positionStricte <= p_format.length()
                && p_format.at(positionStricte) == p_chaine.at(positionStricte)
                && estConforme(p_format, p_chaine);
     }
