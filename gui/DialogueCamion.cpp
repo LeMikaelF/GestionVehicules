@@ -79,7 +79,5 @@ void DialogueCamion::validerCamion() {
 
 	if(valide) {
 		accept();
-	} else {
-		reject();
 	}
 }
