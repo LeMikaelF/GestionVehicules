@@ -42,8 +42,6 @@ int DialogueCamion::reqNbEssieux() const {
 }
 
 void DialogueCamion::validerCamion() {
-	//TODO stub
-
 	string niv = ui.lineEditNiv->text().toStdString();
 	string immatriculation = ui.lineEditImmatriculation->text().toStdString();
 
