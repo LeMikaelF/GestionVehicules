@@ -88,21 +88,21 @@ TEST(Proprietaire, ReqProprietaireFormateAucunVehicule) {
 
 	ostringstream os;
 	os 	<< "Proprietaire" << endl
-		<< "-------------------" << endl
-		<< "Nom     : Francoeur" << endl
-		<< "Prenom  : Mikaël" << endl;
+			<< "-------------------" << endl
+			<< "Nom     : Francoeur" << endl
+			<< "Prenom  : Mikaël" << endl;
 	ASSERT_EQ(proprietaire.reqProprietaireFormate(), os.str());
 }
 
 TEST(Proprietaire, ReqProprietaireFormateDeuxVehicules) {
 	Proprietaire proprietaire("Francoeur", "Mikaël");
-		VehiculePromenade vehicule1("JHMFA16586S014014", "000 ABC", 3);
-		VehiculePromenade vehicule2("WP1AC29P65LA91996", "SAAQ", 5);
-		proprietaire.ajouterVehicule(vehicule1);
-		proprietaire.ajouterVehicule(vehicule2);
+	VehiculePromenade vehicule1("JHMFA16586S014014", "000 ABC", 3);
+	VehiculePromenade vehicule2("WP1AC29P65LA91996", "SAAQ", 5);
+	proprietaire.ajouterVehicule(vehicule1);
+	proprietaire.ajouterVehicule(vehicule2);
 
-		ostringstream os;
-		os 	<< "Proprietaire" << endl
+	ostringstream os;
+	os 	<< "Proprietaire" << endl
 			<< "-------------------" << endl
 			<< "Nom     : Francoeur" << endl
 			<< "Prenom  : Mikaël" << endl
@@ -110,7 +110,27 @@ TEST(Proprietaire, ReqProprietaireFormateDeuxVehicules) {
 			<< vehicule1.reqVehiculeFormate()
 			<< "-------------------" << endl
 			<< vehicule2.reqVehiculeFormate();
-		ASSERT_EQ(proprietaire.reqProprietaireFormate(), os.str());}
+	ASSERT_EQ(proprietaire.reqProprietaireFormate(), os.str());}
+
+/**
+ * \brief 	Test de la méthode vehiculeDejaPresent()
+ * 			Cas valides:
+ * 				- Véhicule déjà présent, retourne true
+ * 				- Véhicule pas déjà présent, retourne false
+ */
+TEST(Proprietaire, EstDejaPresentVrai) {
+	Proprietaire proprietaire("Francoeur", "Mikaël");
+	VehiculePromenade vehicule("JHMFA16586S014014", "000 ABC", 3);
+proprietaire.ajouterVehicule(vehicule);
+	ASSERT_TRUE(proprietaire.vehiculeEstDejaPresent("JHMFA16586S014014"));
+}
+
+TEST(Proprietaire, EstDejaPresentFaux) {
+	Proprietaire proprietaire("Francoeur", "Mikaël");
+	VehiculePromenade vehicule("JHMFA16586S014014", "000 ABC", 3);
+	proprietaire.ajouterVehicule(vehicule);
+	ASSERT_FALSE(proprietaire.vehiculeEstDejaPresent("SAAQ"));
+}
 
 /**
  * \brief Création d'une fixture de test pour les méthodes publiques de la classe Proprietaire.
