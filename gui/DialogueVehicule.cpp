@@ -63,5 +63,8 @@ void DialogueVehicule::validerVehicule()
 
 	if(valide){
 		accept();
+
+	}else{
+		reject();
 	}
 }
