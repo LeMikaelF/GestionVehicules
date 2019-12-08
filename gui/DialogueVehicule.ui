@@ -1,19 +1,120 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>DialogueVehiculeClass</class>
- <widget class="QDialog" name="DialogueVehiculeClass" >
-  <property name="geometry" >
+ <widget class="QDialog" name="DialogueVehiculeClass">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>367</width>
+    <height>232</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>DialogueVehicule</string>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelImmatriculation">
+         <property name="text">
+          <string>Immatriculation</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelNiv">
+         <property name="text">
+          <string>Numéro de série</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditNiv"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEditImmatriculation"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelNbSiege">
+         <property name="text">
+          <string>Nombre de sieges</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEditSiege"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="buttonAjouter">
+         <property name="text">
+          <string>Ajouter</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonAnnuler">
+         <property name="text">
+          <string>Annuler</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
- <layoutdefault spacing="6" margin="11" />
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonAjouter</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogueVehiculeClass</receiver>
+   <slot>validerVehicule()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>183</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonAnnuler</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogueVehiculeClass</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>183</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>validerVehicule()</slot>
+ </slots>
 </ui>

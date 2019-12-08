@@ -65,7 +65,7 @@ public:
         GuiClass->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GuiClass);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 25));
+        menubar->setGeometry(QRect(0, 0, 800, 35));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         actionAjouterVehicule = new QMenu(menuMenu);
@@ -86,6 +86,7 @@ public:
         QObject::connect(actionAjouterCamion, SIGNAL(triggered()), GuiClass, SLOT(ajouterCamion()));
         QObject::connect(actionSupprimerVehicule, SIGNAL(triggered()), GuiClass, SLOT(supprimerVehicule()));
         QObject::connect(actionQuitter, SIGNAL(triggered()), GuiClass, SLOT(close()));
+        QObject::connect(actionAjouterVehiculePromenade, SIGNAL(triggered()), GuiClass, SLOT(ajouterVehiculePromenade()));
 
         QMetaObject::connectSlotsByName(GuiClass);
     } // setupUi

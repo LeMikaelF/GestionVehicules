@@ -4,6 +4,8 @@
 #include "Camion.h"
 #include "DialogueCamion.h"
 #include "DialogueSupprimer.h"
+#include "DialogueVehicule.h"
+#include "VehiculePromenade.h"
 
 using namespace std;
 
@@ -41,6 +43,21 @@ void Gui::ajouterCamion() {
 }
 
 void Gui::ajouterVehiculePromenade() {
+	DialogueVehicule dialogueVehicule(this);
+	if(dialogueVehicule.exec()) {
+		try{
+			proprietaire.ajouterVehicule(saaq::VehiculePromenade(
+					dialogueVehicule.reqNiv(),
+					dialogueVehicule.reqImmatriculation(),
+					dialogueVehicule.reqNbSieges()
+					));
+			ui.plainTextEditProprietaire->setPlainText(
+					QString::fromStdString(proprietaire.reqProprietaireFormate()));
+		} catch (VehiculeDejaPresentException& exception){
+			QString message(exception.what());
+			QMessageBox::information(this, "Erreur", message);
+		}
+	}
 }
 
 void Gui::supprimerVehicule() {
