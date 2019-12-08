@@ -19,6 +19,7 @@ public:
 private:
     Ui::GuiClass ui;
     saaq::Proprietaire proprietaire;
+    void majProprietaire();
 
 private slots:
 	void ajouterCamion();

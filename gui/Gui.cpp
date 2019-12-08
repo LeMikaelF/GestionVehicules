@@ -33,8 +33,7 @@ void Gui::ajouterCamion() {
 					dialogueCamion.reqPoids(),
 					dialogueCamion.reqNbEssieux()
 					));
-			ui.plainTextEditProprietaire->setPlainText(
-					QString::fromStdString(proprietaire.reqProprietaireFormate()));
+			majProprietaire();
 		} catch (VehiculeDejaPresentException& exception){
 			QString message(exception.what());
 			QMessageBox::information(this, "Erreur", message);
@@ -51,8 +50,7 @@ void Gui::ajouterVehiculePromenade() {
 					dialogueVehicule.reqImmatriculation(),
 					dialogueVehicule.reqNbSieges()
 					));
-			ui.plainTextEditProprietaire->setPlainText(
-					QString::fromStdString(proprietaire.reqProprietaireFormate()));
+			majProprietaire();
 		} catch (VehiculeDejaPresentException& exception){
 			QString message(exception.what());
 			QMessageBox::information(this, "Erreur", message);
@@ -66,11 +64,15 @@ void Gui::supprimerVehicule() {
 		try {
 			const string niv = dialogueSupprimer.reqNiv();
 			proprietaire.supprimerVehicule(niv);
-			ui.plainTextEditProprietaire->setPlainText(
-					QString::fromStdString(proprietaire.reqProprietaireFormate()));
+			majProprietaire();
 		} catch (VehiculeAbsentException& exception) {
 			QString message(exception.what());
 			QMessageBox::information(this, "Erreur", message);
 		}
 	}
+}
+
+void Gui::majProprietaire() {
+	ui.plainTextEditProprietaire->setPlainText(
+						QString::fromStdString(proprietaire.reqProprietaireFormate()));
 }
