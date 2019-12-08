@@ -23,6 +23,7 @@ void DialogueSupprimer::validerNiv() {
 	if(!util::validerNiv(ui.lineEditNiv->text().toStdString())) {
 		QString msg("Le niv est invalide.");
 		QMessageBox::information(this, "Erreur", msg);
+		reject();
 	} else {
 		accept();
 	}
