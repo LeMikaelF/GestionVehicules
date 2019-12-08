@@ -12,8 +12,16 @@ public:
     DialogueVehicule(QWidget *parent = 0);
     ~DialogueVehicule();
 
+    std::string reqNiv() const;
+    std::string reqImmatriculation() const;
+    int reqNbSieges() const;
+
+
 private:
     Ui::DialogueVehiculeClass ui;
+
+private slots:
+	void validerVehicule();
 };
 
 #endif // DIALOGUEVEHICULE_H

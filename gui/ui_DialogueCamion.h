@@ -47,7 +47,7 @@ public:
         if (DialogueCamionClass->objectName().isEmpty())
             DialogueCamionClass->setObjectName(QString::fromUtf8("DialogueCamionClass"));
         DialogueCamionClass->setWindowModality(Qt::ApplicationModal);
-        DialogueCamionClass->resize(239, 184);
+        DialogueCamionClass->resize(372, 249);
         DialogueCamionClass->setModal(true);
         verticalLayout_3 = new QVBoxLayout(DialogueCamionClass);
         verticalLayout_3->setSpacing(6);

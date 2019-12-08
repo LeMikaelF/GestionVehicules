@@ -30,7 +30,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>35</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -122,9 +122,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionAjouterVehiculePromenade</sender>
+   <signal>triggered()</signal>
+   <receiver>GuiClass</receiver>
+   <slot>ajouterVehiculePromenade()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>334</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>ajouterCamion()</slot>
   <slot>supprimerVehicule()</slot>
+  <slot>ajouterVehiculePromenade()</slot>
  </slots>
 </ui>
