@@ -13,7 +13,6 @@ Gui::Gui(QWidget *parent)
     : QMainWindow(parent), proprietaire("Desroches", "Giovanni")
 {
 	ui.setupUi(this);
-	//FIXME changer ceci pour un richText, mes espaces insécables ne s'affichent pas correctement.
 	ui.plainTextEditProprietaire->setPlainText(
 			QString::fromStdString(proprietaire.reqProprietaireFormate()));
 }
