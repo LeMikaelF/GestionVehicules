@@ -104,7 +104,6 @@ void Proprietaire::ajouterVehicule(const Vehicule &p_nouveauVehicule)
  */
 Proprietaire::~Proprietaire()
 {
-//TODO écrire destructeur
 	for(std::vector<Vehicule*>::iterator it = m_vVehicules.begin(); it != m_vVehicules.end(); it++) {
 			delete(*it);
 			it = m_vVehicules.erase(it);
