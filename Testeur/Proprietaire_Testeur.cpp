@@ -59,8 +59,11 @@ TEST(Proprietaire, AjouterVehiculeVehiculeDejaPresent) {
 
 /**
  * \brief	Test de la méthode supprimerVehicule()
- * 			Cas valide: supprimer un véhicule présent
- * 			Cas invalide: supprimer un véhicule absent
+ * 			Cas valide:
+ * 				- Supprimer un véhicule présent
+ * 			Cas invalide:
+ * 				- Supprimer un véhicule absent
+ * 				- Niv invalide
  */
 TEST(Proprietaire, SupprimerVehiculeValide) {
 	Proprietaire proprietaire("Francoeur", "Mikaël");
@@ -74,6 +77,11 @@ TEST(Proprietaire, SupprimerVehiculeValide) {
 TEST(Proprietaire, SupprimerVehiculeAbsent) {
 	Proprietaire proprietaire("Francoeur", "Mikaël");
 	ASSERT_THROW(proprietaire.supprimerVehicule("JHMFA16586S014014"), VehiculeAbsentException);
+}
+
+TEST(Proprietaire, SupprimerVehiculeNivInvalide) {
+	Proprietaire proprietaire("Francoeur", "Mikaël");
+	ASSERT_THROW(proprietaire.supprimerVehicule("12345"), PreconditionException);
 }
 
 /**

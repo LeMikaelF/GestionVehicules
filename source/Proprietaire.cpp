@@ -104,10 +104,11 @@ void Proprietaire::ajouterVehicule(const Vehicule &p_nouveauVehicule)
  */
 Proprietaire::~Proprietaire()
 {
-	for(std::vector<Vehicule*>::iterator it = m_vVehicules.begin(); it != m_vVehicules.end(); it++) {
-			delete(*it);
-			it = m_vVehicules.erase(it);
+	for(auto& p : m_vVehicules) {
+		delete p;
+		p = nullptr;
 	}
+	m_vVehicules.clear();
 }
 
 /**
@@ -171,5 +172,6 @@ void Proprietaire::supprimerVehicule(const std::string& p_niv) {
 		throw VehiculeAbsentException("Erreur: véhicule # "
 				+ string(p_niv) + "absent.");
 	}
+	POSTCONDITION(none_of(m_vVehicules.begin(), m_vVehicules.end(), [p_niv](Vehicule* v) {return v->reqNiv() == p_niv;}));
 	INVARIANTS();
 }
