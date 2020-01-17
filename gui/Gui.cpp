@@ -10,7 +10,7 @@
 using namespace std;
 
 Gui::Gui(QWidget *parent)
-    : QMainWindow(parent), proprietaire("Desroches", "Giovanni")
+    : QMainWindow(parent), proprietaire("Nom", "Prénom")
 {
 	ui.setupUi(this);
 	ui.plainTextEditProprietaire->setPlainText(
