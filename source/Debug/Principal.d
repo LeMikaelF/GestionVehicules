@@ -1,1 +1,0 @@
-Principal.o: ../Principal.cpp
